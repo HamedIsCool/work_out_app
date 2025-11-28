@@ -60,61 +60,6 @@ def db_payload(body:WorkoutCreate) -> dict:
         "notes": body.notes
     }
 
-
-# @router.get("/workouts/today")
-# def result_today():
-#     now = datetime.now()
-#     today_start = datetime.combine(now.date(), time.min)
-#     tomorrow_start = today_start + timedelta(days=1)
-
-#     start_iso = today_start.isoformat()
-#     end_iso = tomorrow_start.isoformat()
-
-#     response = (
-#         supabase.table("workouts")
-#         .select("*")
-#         .gte("performed_at", start_iso)
-#         .lt("performed_at", end_iso)
-#         .execute()
-#     )
-
-#     if getattr(response, "error", None):   
-#         raise HTTPException(
-#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-#             detail="Failed to fetch today's workouts",
-#         )
-
-#     return response.data               
-
-
-
-# @router.get("/workouts/weekly")
-# def result_weekly():
-#     now = datetime.now()
-#     end_date = datetime.combine(now.date(), time.min) + timedelta(days=1)
-#     start_date = end_date - timedelta(days=7)
-
-#     start_iso = start_date.isoformat()
-#     end_iso = end_date.isoformat()
-
-#     response = (
-#         supabase.table("workouts")
-#         .select("*")
-#         .gte("performed_at", start_iso)
-#         .lt("performed_at", end_iso)
-#         .execute()
-#     )
-
-#     if getattr(response, "error", None):   
-#         raise HTTPException(
-#             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-#             detail="Failed to fetch today's workouts",
-#         )
-
-#     return response.data               
-
-
-
 @router.get("/workouts/results")
 def get_workout_results_by_duration(duration: int):
     
