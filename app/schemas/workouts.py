@@ -1,8 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel
 
-
-
 class WorkoutCreate(BaseModel):
     type: str
     duration_minutes: int

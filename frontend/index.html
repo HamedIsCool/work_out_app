@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <title>Workout logging app</title>
+  <body>
+    <div>
+      <h3 id="work-out-CTA">Log your workout!</h3>
+      <form id="workout-form">
+        <label for="type">Type of workout</label>
+        <select name="type" id="type" required>
+          <option selected="none" value="none">Choose</option>
+          <option value="running">Running</option>
+          <option value="cycling">Cycling</option>
+          <option value="gym">Gym</option>
+        </select>
+        <br />
+        <br />
+        <label for="duration">Duration (in minutes): </label>
+        <input type="number" id="duration"  required/>
+        <br/>
+        <br/>
+        <label for="mood">How is your mood?</label>
+        <select name="mood" id="mood">
+          <option value="1">Really Bad</option>
+          <option value="2">Bad</option>
+          <option value="3">Neutral</option>
+          <option value="4">Good</option>
+          <option value="5">Really Good</option>
+        </select>
+        <br>
+        <br>
+        <label for="date">Workout date: </label>
+        <input type="datetime-local" id="date" />
+        <br>
+        <br>
+        <input id="submit" type="submit" value="Submit">
+
+      </form>
+    </div>
+    <div id="message"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
